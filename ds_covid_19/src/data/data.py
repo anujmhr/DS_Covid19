@@ -1,3 +1,4 @@
+# %load src/data/data.py
 
 import subprocess
 import os
@@ -15,7 +16,10 @@ def get_johns_hopkins():
     ''' Get data by a git pull request, the source code has to be pulled first
         Result is stored in the predefined csv structure
     '''
-    g = git.cmd.Git(os.path.dirname('data/raw/COVID-19/'))
+    jh_data_path='data/raw/COVID-19/'
+    if not os.path.isdir(jh_data_path):
+        git.Git("data/raw/").clone("https://github.com/CSSEGISandData/COVID-19.git")
+    g = git.cmd.Git(os.path.dirname(jh_data_path))
     out= g.pull()
 
     print("out : " + str(out))

@@ -24,8 +24,7 @@ app.layout = html.Div([
     dcc.Markdown('''
     #  Applied Data Science on COVID-19 data
 
-    Goal of the project is to teach data science by applying a cross industry standard process,
-    it covers the full walkthrough of: automated data gathering, data transformations,
+    Full walkthrough of: automated data gathering, data transformations,
     filtering and machine learning to approximating the doubling time, and
     (static) deployment of responsive dashboard.
 
@@ -39,7 +38,7 @@ app.layout = html.Div([
     dcc.Dropdown(
         id='country_drop_down',
         options=[ {'label': each,'value':each} for each in df_input_large['country'].unique()],
-        value=['US', 'Germany','Italy'], # which are pre-selected
+        value=['Nepal', 'Germany','Italy'], # which are pre-selected
         multi=True
     ),
 

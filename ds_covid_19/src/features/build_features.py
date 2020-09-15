@@ -154,9 +154,6 @@ if __name__ == '__main__':
     pd_JH_data=pd.read_csv('data/processed/COVID_relational_database_by_country_confirmed.csv',sep=';',parse_dates=[0])
     pd_JH_data=pd_JH_data.sort_values('date',ascending=True).copy()
 
-    #test_structure=pd_JH_data[((pd_JH_data['country']=='US')|
-    #                  (pd_JH_data['country']=='Germany'))]
-
     pd_result_larg=calc_filtered_data(pd_JH_data)
     pd_result_larg=calc_doubling_rate(pd_result_larg)
     pd_result_larg=calc_doubling_rate(pd_result_larg,'confirmed_filtered')
